@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphora — Privacy Policy</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+        line-height: 1.6;
+        color: #1a1a1a;
+        background: #fff;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.25rem;
+      }
+      .updated {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+        margin-top: 2.25rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.4rem;
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      li {
+        margin-bottom: 0.4rem;
+      }
+      code {
+        background: #f3f3f3;
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+      .callout {
+        background: #f6f8fa;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+      }
+      footer {
+        margin-top: 3rem;
+        color: #666;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Graphora — Privacy Policy</h1>
+    <p class="updated">Last updated: June 27, 2026</p>
+
+    <div class="callout">
+      <strong>In one sentence:</strong> Graphora builds a knowledge graph of your browsing
+      activity entirely on your own device — nothing you browse, note, or ask is ever sent to a
+      server, sold, or shared with anyone.
+    </div>
+
+    <h2>What Graphora is</h2>
+    <p>
+      Graphora is a Chrome extension with a single purpose: helping you understand and recall
+      your own browsing activity by automatically organizing the websites you visit into a
+      private, on-device "knowledge graph" (Topics → Subtopics → Websites). Supporting features —
+      a per-site notes panel, a browsing-pattern summary ("Internet Identity"), and an optional
+      on-device AI assistant — all exist to serve that one purpose.
+    </p>
+
+    <h2>What data Graphora processes</h2>
+    <p>To do this, Graphora reads and stores, on your own device only:</p>
+    <ul>
+      <li><strong>Web history</strong> — the URLs, domains, and page titles you visit, how many times, and how long you spend on each, used to build your knowledge graph.</li>
+      <li><strong>Notes</strong> — any free-text notes you choose to write about a page.</li>
+      <li><strong>Optional display name</strong> — a fictional/persona name you may choose to personalize the "Internet Identity" card (e.g. "AlphaTony"). This is entirely optional and never required.</li>
+      <li><strong>UI preferences</strong> — things like whether you've hidden the overlay on a given site, or its on-screen position.</li>
+    </ul>
+    <p>
+      Graphora does <strong>not</strong> read the text, images, or content of the pages you visit
+      — only the metadata above (URL, title, timestamps, visit counts).
+    </p>
+
+    <h2>Where this data lives</h2>
+    <p>
+      Everything Graphora collects is stored locally in your browser, using standard Chrome
+      extension storage (<code>chrome.storage</code> and IndexedDB) — the same storage mechanisms
+      any website's own data uses. None of it is:
+    </p>
+    <ul>
+      <li>Sent to any server we operate (we don't operate any server)</li>
+      <li>Synced to any account (Graphora has no accounts, no sign-in)</li>
+      <li>Sold, rented, or shared with any third party, under any circumstance</li>
+      <li>Used for advertising, analytics, or tracking of any kind</li>
+    </ul>
+    <p>
+      You can delete all of this data at any time from the extension's dashboard ("Data
+      Management" section), which permanently erases everything Graphora has stored.
+    </p>
+
+    <h2>The on-device AI Assistant (Beta)</h2>
+    <p>
+      Graphora includes an optional AI Assistant that can answer questions about your own
+      browsing activity. It runs a small open-source language model (Phi-3-mini, via the WebLLM
+      runtime) entirely on your device using your GPU (WebGPU) — there is no cloud AI service
+      involved. The first time you choose to use this feature, your browser downloads the model
+      weights and a WebAssembly runtime from public, open-source hosts (Hugging Face and the
+      MLC-AI project's GitHub-hosted binaries) and caches them locally. After that one-time
+      download, every question you ask and every answer it gives is generated entirely on your
+      device — nothing is ever sent anywhere. You must explicitly choose to use this feature
+      before anything is downloaded.
+    </p>
+
+    <h2>Browser permissions Graphora uses, and why</h2>
+    <ul>
+      <li><strong>tabs</strong> — to identify the active tab's URL/title for tracking, and to open the dashboard.</li>
+      <li><strong>history</strong> — to optionally import your existing browser history into your knowledge graph, and as a fallback source of visit info.</li>
+      <li><strong>storage</strong> — to store everything above, locally, on your device.</li>
+      <li><strong>idle</strong> — to pause time-tracking while you're away, so idle time isn't recorded as active browsing.</li>
+      <li><strong>alarms</strong> — to periodically checkpoint tracking so it survives the background script being restarted by Chrome.</li>
+      <li><strong>Host permissions (all http/https sites)</strong> — to show the on-page overlay and track visits across the sites you actually use, which is the entire point of the extension.</li>
+    </ul>
+    <p>
+      Certain sensitive categories of sites — banking, payments, and webmail/office-suite domains
+      — are explicitly excluded from tracking and never get the on-page overlay.
+    </p>
+
+    <h2>Children's privacy</h2>
+    <p>
+      Graphora is not directed at children and does not knowingly collect data from children.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes, the "Last updated" date above will change accordingly. Since all
+      data stays on your device, changes to this policy do not retroactively affect data already
+      stored locally on your machine.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy or Graphora's data practices can be sent to:
+      <strong>alphaknowsnobody@gmail.com</strong>.
+    </p>
+
+    <footer>Graphora is independently developed and is not affiliated with Google or Chrome.</footer>
+  </body>
+</html>
